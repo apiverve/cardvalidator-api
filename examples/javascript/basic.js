@@ -13,12 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/cardvalidator';
  */
 async function callCardValidatorAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            number: &#x27;4900264223817524&#x27;
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY

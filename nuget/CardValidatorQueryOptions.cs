@@ -12,7 +12,6 @@ namespace APIVerve.API.CardValidator
     {
         /// <summary>
         /// The card number to validate
-        /// Example: 4900264223817524
         /// </summary>
         [JsonProperty("number")]
         public string Number { get; set; }

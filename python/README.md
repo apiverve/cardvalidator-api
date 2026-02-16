@@ -239,8 +239,9 @@ from apiverve_cardvalidator.apiClient import CardvalidatorAPIClient
 
 api = CardvalidatorAPIClient("[YOUR_API_KEY]")
 
+query = { "number": "4900264223817524" }
+
 try:
-    query = { "number": "4900264223817524" }
     result = api.execute(query)
     print(result)
 finally:

@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/cardvalidator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Card Validator is a simple tool for validating if a card number is valid or not. It checks the card number format and the Luhn algorithm to see if the card number is valid.",
   "main": "index.js",
   "types": "index.d.ts",

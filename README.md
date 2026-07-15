@@ -1,6 +1,6 @@
 # [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
-Card Validator is a simple tool for validating if a card number is valid or not. It checks the card number format and the Luhn algorithm to see if the card number is valid.
+Card Validator checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score.
 
 The Card Validator API provides a simple, reliable way to integrate card validator functionality into your applications. Built for developers who need production-ready card validator capabilities without the complexity of building from scratch.
 
@@ -30,7 +30,11 @@ The Card Validator API provides a simple, reliable way to integrate card validat
 ```javascript
 async function callCardValidatorAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/cardvalidator', {
+        const params = new URLSearchParams({
+            number: '4900264223817524'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/cardvalidator?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +54,7 @@ callCardValidatorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/cardvalidator?param=value" \
+curl -X GET "https://api.apiverve.com/v1/cardvalidator?number=4900264223817524" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +154,7 @@ go get github.com/apiverve/cardvalidator-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +173,7 @@ go get github.com/apiverve/cardvalidator-api/go
 The Card Validator API is commonly used for:
 
 - **Web Applications** - Add card validator features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with card validator capabilities
 - **Data Pipelines** - Process and analyze data at scale

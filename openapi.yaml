@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Card Validator
   description: >-
-    Card Validator is a simple tool for validating if a card number is valid or
-    not. It checks the card number format and the Luhn algorithm to see if the
-    card number is valid.
+    Card Validator checks whether a card number is valid, identifies the card
+    brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa,
+    Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits,
+    flags known processor test cards, and returns a composite risk score.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -68,8 +69,15 @@ paths:
                       name: CVV
                       size: 3
                     matchStrength: 1
+                  brand: Visa
                   cardNumber: '4900264223817524'
+                  bin: '490026'
+                  last4: '7524'
                   isValid: true
+                  isPotentiallyValid: true
+                  isTestCard: false
+                  riskScore: 0
+                  riskLevel: low
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

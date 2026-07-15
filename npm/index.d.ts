@@ -4,33 +4,52 @@ declare module '@apiverve/cardvalidator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface cardvalidatorResponse {
     status: string;
     error: string | null;
     data: CardValidatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface CardValidatorData {
-      card:       Card;
-      cardNumber: string;
-      isValid:    boolean;
+      card:               Card;
+      brand:              null | string;
+      cardNumber:         null | string;
+      bin:                null | string;
+      last4:              null | string;
+      isValid:            boolean | null;
+      isPotentiallyValid: boolean | null;
+      isTestCard:         boolean | null;
+      riskScore:          number | null;
+      riskLevel:          null | string;
   }
   
   interface Card {
-      niceType:      string;
-      type:          string;
-      patterns:      number[];
-      gaps:          number[];
-      lengths:       number[];
+      niceType:      null | string;
+      type:          null | string;
+      patterns:      (number | null)[];
+      gaps:          (number | null)[];
+      lengths:       (number | null)[];
       code:          Code;
-      matchStrength: number;
+      matchStrength: number | null;
   }
   
   interface Code {
-      name: string;
-      size: number;
+      name: null | string;
+      size: number | null;
   }
 
   export default class cardvalidatorWrapper {

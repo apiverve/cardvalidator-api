@@ -1,7 +1,7 @@
 CardValidator API
 ============
 
-Card Validator is a simple tool for validating if a card number is valid or not. It checks the card number format and the Luhn algorithm to see if the card number is valid.
+Card Validator checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CardValidator;
 
 class Program
 {
@@ -60,8 +60,8 @@ class Program
         // Initialize the API client
         var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+        var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
         // Make the API call
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CardValidator;
 
 public class Example
 {
@@ -124,8 +124,8 @@ public class Example
     {
         var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+        var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CardValidator;
 
 public class Example
 {
@@ -156,8 +156,8 @@ public class Example
     {
         var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+        var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CardValidator;
 
 public class Example
 {
@@ -193,8 +193,8 @@ public class Example
     {
         var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+        var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
         try
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CardValidator;
 
 public class Example
 {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+        var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
         try
@@ -290,8 +290,8 @@ var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +334,8 @@ var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +346,8 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    number = "4900264223817524"
+var queryOptions = new CardValidatorQueryOptions {
+    Number = "4900264223817524"
 };
 
 using (var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]"))
@@ -389,8 +389,15 @@ using (var apiClient = new CardValidatorAPIClient("[YOUR_API_KEY]"))
       },
       "matchStrength": 1
     },
+    "brand": "Visa",
     "cardNumber": "4900264223817524",
-    "isValid": true
+    "bin": "490026",
+    "last4": "7524",
+    "isValid": true,
+    "isPotentiallyValid": true,
+    "isTestCard": false,
+    "riskScore": 0,
+    "riskLevel": "low"
   }
 }
 ```

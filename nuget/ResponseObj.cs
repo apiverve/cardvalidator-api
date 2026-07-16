@@ -25,6 +25,9 @@ namespace APIVerve.API.CardValidator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -32,11 +35,32 @@ namespace APIVerve.API.CardValidator
         [JsonProperty("card")]
         public Card Card { get; set; }
 
+        [JsonProperty("brand")]
+        public string Brand { get; set; }
+
         [JsonProperty("cardNumber")]
         public string CardNumber { get; set; }
 
+        [JsonProperty("bin")]
+        public long? Bin { get; set; }
+
+        [JsonProperty("last4")]
+        public long? Last4 { get; set; }
+
         [JsonProperty("isValid")]
-        public bool IsValid { get; set; }
+        public bool? IsValid { get; set; }
+
+        [JsonProperty("isPotentiallyValid")]
+        public bool? IsPotentiallyValid { get; set; }
+
+        [JsonProperty("isTestCard")]
+        public bool? IsTestCard { get; set; }
+
+        [JsonProperty("riskScore")]
+        public long? RiskScore { get; set; }
+
+        [JsonProperty("riskLevel")]
+        public string RiskLevel { get; set; }
     }
 
     public partial class Card
@@ -48,19 +72,19 @@ namespace APIVerve.API.CardValidator
         public string Type { get; set; }
 
         [JsonProperty("patterns")]
-        public long[] Patterns { get; set; }
+        public long?[] Patterns { get; set; }
 
         [JsonProperty("gaps")]
-        public long[] Gaps { get; set; }
+        public long?[] Gaps { get; set; }
 
         [JsonProperty("lengths")]
-        public long[] Lengths { get; set; }
+        public long?[] Lengths { get; set; }
 
         [JsonProperty("code")]
         public Code Code { get; set; }
 
         [JsonProperty("matchStrength")]
-        public long MatchStrength { get; set; }
+        public long? MatchStrength { get; set; }
     }
 
     public partial class Code
@@ -69,6 +93,18 @@ namespace APIVerve.API.CardValidator
         public string Name { get; set; }
 
         [JsonProperty("size")]
-        public long Size { get; set; }
+        public long? Size { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }

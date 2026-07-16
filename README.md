@@ -191,11 +191,58 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Card Validator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "card": {
+      "niceType": "Visa",
+      "type": "visa",
+      "patterns": [
+        4
+      ],
+      "gaps": [
+        4,
+        8,
+        12
+      ],
+      "lengths": [
+        16,
+        18,
+        19
+      ],
+      "code": {
+        "name": "CVV",
+        "size": 3
+      },
+      "matchStrength": 1
+    },
+    "brand": "Visa",
+    "cardNumber": "4900264223817524",
+    "bin": "490026",
+    "last4": "7524",
+    "isValid": true,
+    "isPotentiallyValid": true,
+    "isTestCard": false,
+    "riskScore": 0,
+    "riskLevel": "low"
+  }
 }
 ```
 

@@ -1,13 +1,12 @@
 Card Validator API
 ============
 
-Card Validator is a simple tool for validating if a card number is valid or not. It checks the card number format and the Luhn algorithm to see if the card number is valid.
+Card Validator checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-cardvalidator.svg)](https://pypi.org/project/apiverve-cardvalidator/)
+
+This is a Python wrapper for the [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-cardvalidator
 
 ## Configuration
 
-Before using the cardvalidator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Card Validator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Card Validator API documentation is found here: [https://docs.apiverve.com/ref/cardvalidator](https://docs.apiverve.com/ref/cardvalidator?utm_source=pypi&utm_medium=readme).
+The Card Validator API documentation is found here: [https://docs.apiverve.com/ref/cardvalidator](https://docs.apiverve.com/ref/cardvalidator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -124,8 +123,15 @@ print(result)
       },
       "matchStrength": 1
     },
-    "cardNumber": "4900264223817524",
-    "isValid": true
+    "brand": "Visa",
+    "cardNumber": "************7524",
+    "bin": "490026",
+    "last4": "7524",
+    "isValid": true,
+    "isPotentiallyValid": true,
+    "isTestCard": false,
+    "riskScore": 0,
+    "riskLevel": "low"
   }
 }
 ```
@@ -253,7 +259,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -264,12 +270,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

@@ -1,13 +1,13 @@
-# [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
 Card Validator checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score.
 
 The Card Validator API provides a simple, reliable way to integrate card validator functionality into your applications. Built for developers who need production-ready card validator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/cardvalidator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/cardvalidator](https://docs.apiverve.com/ref/cardvalidator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -234,7 +234,7 @@ A real response from the Card Validator API:
       "matchStrength": 1
     },
     "brand": "Visa",
-    "cardNumber": "4900264223817524",
+    "cardNumber": "************7524",
     "bin": "490026",
     "last4": "7524",
     "isValid": true,
@@ -250,7 +250,7 @@ A real response from the Card Validator API:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Card Validator API](https://apiverve.com/marketplace/cardvalidator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

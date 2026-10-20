@@ -20,7 +20,7 @@ servers:
 paths:
   /v1/cardvalidator:
     get:
-      summary: Validate Card Number
+      summary: Card Validator
       description: Validate a card number to ensure it is valid
       operationId: cardvalidator
       parameters:
@@ -70,7 +70,7 @@ paths:
                       size: 3
                     matchStrength: 1
                   brand: Visa
-                  cardNumber: '4900264223817524'
+                  cardNumber: '************7524'
                   bin: '490026'
                   last4: '7524'
                   isValid: true

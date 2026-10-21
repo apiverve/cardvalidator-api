@@ -1,7 +1,7 @@
 {
     "name": "apiverve/cardvalidator",
     "description": "Card Validator checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score.",
-    "version": "1.2.0",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "cardvalidator",
-        "card validator",
         "card validator api",
-        "card validator tool",
-        "card validator software",
-        "card validator service"
+        "luhn algorithm check",
+        "validate credit card number",
+        "credit card brand detection",
+        "bin lookup"
     ],
-    "homepage": "https://apiverve.com/marketplace/cardvalidator?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/cardvalidator?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/cardvalidator",

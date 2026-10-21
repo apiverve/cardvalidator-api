@@ -92,7 +92,7 @@ $client = new Client(
       "matchStrength": 1
     },
     "brand": "Visa",
-    "cardNumber": "4900264223817524",
+    "cardNumber": "************7524",
     "bin": "490026",
     "last4": "7524",
     "isValid": true,
@@ -111,11 +111,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/cardvalidator?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/cardvalidator?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/cardvalidator?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/cardvalidator?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/cardvalidator?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/cardvalidator?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License

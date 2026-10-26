@@ -1,6 +1,6 @@
 # Card Validator API
 
-Card Validator checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score.
+Card Validator is a credit card number validator API: it checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/cardvalidator.svg)](https://www.npmjs.com/package/@apiverve/cardvalidator)
 

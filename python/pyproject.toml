@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-cardvalidator"
-version = "1.2.2"
+version = "1.2.3"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Card Validator checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score."
+description = "Card Validator is a credit card number validator API: it checks whether a card number is valid, identifies the card brand, and flags risk. It runs the Luhn checksum, detects the scheme (Visa, Mastercard, Amex and more), returns the PCI-safe BIN and last 4 digits, flags known processor test cards, and returns a composite risk score."
 keywords = ["card validator api", "luhn algorithm check", "validate credit card number", "credit card brand detection", "bin lookup"]
 readme = "README.md"
 requires-python = ">=3.9"

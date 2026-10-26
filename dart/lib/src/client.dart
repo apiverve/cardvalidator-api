@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Card Validator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/cardvalidator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/cardvalidator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [number] (required) - The card number to validate [minLength: 13, maxLength: 19]

@@ -4,6 +4,6 @@ require_relative "apiverve_cardvalidator/client"
 
 module APIVerve
   module Cardvalidator
-    VERSION = "1.2.2"
+    VERSION = "1.2.3"
   end
 end
